@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <image class="plus" bindlongpress="handleClearStorage" src="static/add.png" />
+    <input class="new-event" value="{{ event }}" placeholder="Anything Here..." bindinput="handleInputEvent" bindconfirm="handleAddTask" />
+  </view>
+  <block wx:if="{{ events.length }}">
+    <view class="events">
+      <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ events }}" wx:key="index" bindtap="handleCompleteTask" data-index="{{ index }}">
+        <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}" />
+        <text class="name">{{ item.name }}</text>
+        <icon class="remove" type="clear" size="16" catchtap="handleRemoveTask" data-index="{{ index }}" />
+      </view>
+    </view>
+    <view class="footer">
+      <text wx:if="{{ leftCount }}">{{ leftCount }} {{ leftCount === 1 ? 'item' : 'items' }} left</text>
+      <text wx:else></text>
+      <text class="btn" wx:if="{{ events.length > leftCount }}" bindtap="handleClearCompleted">Clear completed</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">Congratulations!</text>
+      <text class="content">There's no more task left.</text>
+    </view>
+  </block>
+</view>

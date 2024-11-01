@@ -1,0 +1,37 @@
+.tab-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 50rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: transparent;
+}
+
+.tab-bar-area {
+  display: flex;
+  width: 50%;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 100rpx;
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item-image {
+  width: 27px;
+  height: 27px;
+}
+
+.tab-bar-item-view {
+  font-size: 10px;
+}

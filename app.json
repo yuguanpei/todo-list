@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/logs/logs",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "TODO",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "list": [{
+      "pagePath": "pages/list/list",
+      "text": "list"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "logs"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

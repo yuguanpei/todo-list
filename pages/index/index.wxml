@@ -1,0 +1,15 @@
+<view class="userinfo">
+  <block wx:if="{{editing}}">
+    <form bindsubmit="onSubmitUserInfo">
+      <button class="input-avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </button>
+      <input type="nickname" name="nickname" class="input-nickname" value="{{userInfo.nickName}}" placeholder="{{lang === 'zh-cn' ? '请输入昵称' : 'Input your nickname'}}" bindblur="onChooseNickname" />
+      <button type="primary" form-type="submit">{{lang === 'zh-cn' ? '授权' : 'Authorization'}}</button>
+    </form>
+  </block>
+  <block wx:else>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" bindlongpress="onRemoveAvatar"></image>
+    <text class="userinfo-nickname" bindlongpress="onRemoveNickname">{{userInfo.nickName}}</text>
+  </block>
+</view>
